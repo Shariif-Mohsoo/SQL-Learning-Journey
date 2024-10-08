@@ -15,9 +15,9 @@ insert into result_table values(1,'Computer',64);
 insert into result_table values(2,'English',90);
 insert into result_table values(2,'Math',98);
 insert into result_table values(2,'Computer',99);
-insert into result_table values(3,'English',98);
-insert into result_table values(3,'Math',90);
-insert into result_table values(3,'Computer',40);
+insert into result_table values(3,'English',90);
+insert into result_table values(3,'Math',99);
+insert into result_table values(3,'Computer',80);
 
 -- deleting the student with roll number 2
 delete from student_table where rollno = 2;
