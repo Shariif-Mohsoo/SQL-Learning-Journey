@@ -1,3 +1,4 @@
+-- 5 queries
 -- select all the data from emp table.
 select * from emp;
 -- select unique jobs from emp table.
