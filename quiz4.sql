@@ -6,7 +6,7 @@ create table dept(
 -- inserting data
 insert into dept values(10,'ACCOUNTING','NEW YORK');
 insert into dept values(20,'RESEARCH','DALLAS');
-insert into dept values(30,'SALES','ARLIGTION');
 insert into dept values(40,'OPERATIONS','BOSTON');
+insert into dept values(45,'SALES','ARLIGTION');
 
 select * from dept;
