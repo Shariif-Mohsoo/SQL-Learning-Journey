@@ -9,3 +9,4 @@ select * from student_table;
 insert into student_table(name,address) values('Ali','Faisalabad');
 insert into student_table(name,address) values('Ahmed','Lahore');
 insert into student_table(name,address) values('Nadeem','Peshawar');
+insert into student_table(name,address) values('Nadeem','Pindi');
