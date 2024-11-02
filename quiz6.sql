@@ -1,11 +1,15 @@
 -- -- 5 queries
--- -- 1 select all the data from emp table.
-SELECT * FROM EMP;
--- -- 2 select unique jobs from emp table.
-SELECT DISTINCT EMP.JOB FROM EMP;
--- -- 3 list the employees in assending order of their salaries.
-SELECT * FROM EMP ORDER BY EMP.SAL  ASC;
--- -- 4 list the detail of employees in asc order of deptno and desc order of jobs.
-SELECT * FROM EMP ORDER BY EMP.DEPTNO ASC, EMP.JOB DESC;
--- -- 5 display all the unique job groups in desc order.
-SELECT DISTINCT EMP.JOB FROM EMP ORDER BY EMP.JOB DESC;
+
+-- 1. Display all the information of the EMP table? 
+select * from emp;
+-- 2. Display unique Jobs from EMP table? 
+select distinct job from emp;
+-- 3. List the emps in the asc order of their Salaries?
+select * from emp order by sal asc; 
+-- 4. List the details of the emps in asc order of the Dptnos and desc of Jobs? 
+select * from emp order by deptno asc, job desc;
+-- 5. Display all the unique job groups in the descending order?
+select distinct job,count(job) from emp group by job order by job desc;
+
+
+
