@@ -18,25 +18,22 @@ order by salgrade.grade asc;
 
 
 
--- List the details of the Depts along with Empno, Ename or without the emps 
-select dept.*,emp.empno,emp.ename
-from dept left join emp on
-emp.deptno = dept.deptno;
--- List the details of the emps whose Salaries more than the employee BLAKE
-select * from emp where emp.sal > (
-	select sal from emp where emp.ename = 'BLAKE'
-);
--- List the emps whose Jobs are same as ALLEN.
+-- 47. List the details of the Depts along with Empno, Ename or without the emps 
+    select dept.*,emp.empno,emp.ename from dept
+    left join emp on dept.deptno = emp.deptno;
+    
+-- 48. List the details of the emps whose Salaries more than the employee BLAKE. 
+    select * from emp where emp.sal > (
+        select sal from emp where emp.ename = 'BLAKE'
+    );
+
+-- 49. List the emps whose Jobs are same as ALLEN. 
 select * from emp where emp.job = (
-	select job from emp where emp.ename = 'ALLEN'
-);
--- List the emps who are senior to King.
-select * from emp 
-where emp.job in ('MANAGER', 'PRESIDENT') 
-and
-emp.hiredate < 
-(
-	select emp.hiredate from emp where emp.ename = 'KING'
+    select job from emp where emp.ename = 'ALLEN'
 );
 
+-- 50. List the emps who are senior to King.
+select * from emp where emp.hiredate < (
+    select hiredate from emp where emp.ename = 'KING'
+) ;
 
