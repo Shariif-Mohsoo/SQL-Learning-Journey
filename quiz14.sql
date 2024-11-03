@@ -23,29 +23,33 @@ select * from dept;
 
 
 
--- Display the total information of the emps along with Grades in the asc order
-select emp.*, salgrade.grade from emp
-join salgrade on emp.sal between salgrade.losal and salgrade.hisal;
+-- 42. Display the total information of the emps along with Grades in the asc order. 
+    select emp.*,salgrade.grade from emp
+    left join salgrade on emp.sal between salgrade.losal and salgrade.hisal
+    order by salgrade.grade asc;
+    select * from salgrade;
 
--- List all the Grade2 and Grade 3 emps.
-select emp.* from emp 
-join salgrade on
-emp.sal between salgrade.losal and salgrade.hisal
-where salgrade.grade in (2,3);
--- Display all Grade 4,5 Analyst and Mgr
-select emp.* from emp
-join salgrade on emp.sal
-between salgrade.losal and salgrade.hisal
-where salgrade.grade in (4,5) and
-emp.job in ('ANALYST','MANAGER');
--- List the Empno, Ename, Sal, Dname, Grade, Exp, and 
--- Ann Sal of emps working for Dept 10 or 20. 
-select emp.empno,emp.ename,emp.sal,dept.dname,
-salgrade.grade, (current_date - emp.hiredate) / 365 as Expi,
-emp.sal * 12 as AnnSal
-from emp 
+-- 43. List all the Grade 2 and Grade 3 emps.
+    select emp.* from emp 
+    join salgrade on
+    emp.sal between salgrade.losal and salgrade.hisal
+    where salgrade.grade in (2,3);
+
+-- 44. Display all Grade 4,5 Analyst and Mgr. 
+    select emp.* from emp 
+    join salgrade on
+    emp.sal between salgrade.losal and salgrade.hisal
+    where salgrade.grade in (4,5)
+    and emp.job in ('ANALYST','MANAGER');
+
+-- 45. List the Empno, Ename, Sal, Dname, Grade, Exp, and Ann Sal of emps 
+-- working for Dept 10 or 20.
+select emp.*,dept.dname,salgrade.grade,
+age(current_date,emp.hiredate) as exp,
+(emp.sal * 12) as ann_sal from emp
 join dept on emp.deptno = dept.deptno
 join salgrade on emp.sal between salgrade.losal and salgrade.hisal
-where emp.deptno in (10,20);
+where dept.deptno in (10,20);
+
 
 
