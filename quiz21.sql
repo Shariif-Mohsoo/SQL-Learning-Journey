@@ -9,6 +9,8 @@ select power(2, 3);  -- Result: 8 (2 raised to the power of 3)
 select ceil(4.3);  -- Result: 5
 select ceiling(-4.7);  -- Result: -4
 select ceil(4.1);
+select ceil(-0.1);
+
 -- Returns the largest integer less than or equal to a number.
 select floor(4.9);
 select floor(-0.1);
