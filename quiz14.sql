@@ -3,7 +3,7 @@
 -- working for ACCOUNTING dept with Ann Sal>28000, 
 -- but the Sal should not be=3000 or 2800 who
 -- doesn’t belongs to the Mgr and whose no is having a digit 
--- ‘7’ or ‘8’ in 3rd position in the asc order of
+-- ‘7’ or ‘9’ in 3rd position in the asc order of
 -- Deptno and desc order of job. 
 select emp.empno,emp.ename,emp.sal,dept.dname,dept.loc,emp.deptno,emp.job
 from emp 
