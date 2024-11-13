@@ -29,3 +29,7 @@ from employee
 group by dept
 having count(employee.eid) < 2;
 -- 3- SOLUTION.
+select dept 
+from employee
+group by dept
+having count(employee.eid) < 2;
