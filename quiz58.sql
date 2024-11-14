@@ -29,7 +29,11 @@ from employee
 group by dept
 having count(employee.eid) < 2;
 -- 3- SOLUTION.
-select dept 
+select ename
 from employee
-group by dept
-having count(employee.eid) < 2;
+where dept in (
+        select dept
+        from employee
+        group by dept
+        having count(employee.eid) < 2
+    );
