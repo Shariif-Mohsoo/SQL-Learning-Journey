@@ -1,8 +1,8 @@
--- 31. List all the emps who joined before or after 1981. 
+-- 31. List all the emps who joined before or after 1982. 
     select * from emp where 
-    EXTRACT(year from hiredate) <= 1981
+    EXTRACT(year from hiredate) <= 1982
     or 
-    EXTRACT(year from hiredate) > 1981;
+    EXTRACT(year from hiredate) > 1982;
 
 -- 32. List the emps whose Empno not starting with digit 78.
     select * from emp where cast(emp.empno as varchar) not like '78%';
