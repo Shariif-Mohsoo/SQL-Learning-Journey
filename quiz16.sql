@@ -19,10 +19,10 @@ UPDATE emp SET comm = 500 WHERE job = 'SALESMAN';
 SELECT * FROM emp WHERE job = 'SALESMAN';
 
 -- Qno4: 
--- Increase salary of employees upto 400 that name start from letter A?
-SELECT * FROM emp WHERE ename like 'A%';
-UPDATE emp SET sal = sal + 400 WHERE ename like 'A%';
-SELECT * FROM emp WHERE ename like 'A%';
+-- Increase salary of employees upto 400 that name start from letter B?
+SELECT * FROM emp WHERE ename like 'B%';
+UPDATE emp SET sal = sal + 400 WHERE ename like 'B%';
+SELECT * FROM emp WHERE ename like 'B%';
 
     
 -- Qno 5
