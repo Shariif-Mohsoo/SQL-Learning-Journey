@@ -13,5 +13,7 @@ where emp.deptno = (
         where dept.dname = 'SALES'
     );
 
--- Display the employee numbers, last names, and salaries of all  employees who earn more 
+-- Display the employee numbers, names, and salaries of all  employees who earn more 
 -- than the average salary and who work in a department with any  employee with a u in their name.
+
+select e1.deptno from emp e1 where emp.ename like "%U%";
