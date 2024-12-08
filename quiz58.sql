@@ -16,3 +16,8 @@ values (1, 'Hashir', 'HR', 1000),
 -- select
 select *
 from employee;
+-- - SOLUTION.
+select count(employee.eid) as numberOfEMP,
+    dept as deptName
+from employee
+GROUP BY dept;
