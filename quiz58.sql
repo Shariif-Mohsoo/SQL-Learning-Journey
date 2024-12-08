@@ -1,4 +1,5 @@
--- Write a query to display all the department names along with number of employees working in.
+--1 Write a query to display all the department names along with number of employees working in.
+--2 Write a query to display all the department names where number of employees are less than 2.
 -- GIVEN TABLE.
 create table employee (
     eid int primary key,
@@ -16,8 +17,9 @@ values (1, 'Hashir', 'HR', 1000),
 -- select
 select *
 from employee;
--- - SOLUTION.
+-- 1- SOLUTION.
 select count(employee.eid) as numberOfEMP,
     dept as deptName
 from employee
 GROUP BY dept;
+-- 2- SOLUTION.
