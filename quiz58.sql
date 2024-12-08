@@ -1,5 +1,6 @@
 --1 Write a query to display all the department names along with number of employees working in.
 --2 Write a query to display all the department names where number of employees are less than 2.
+--3 Write a query to display the names of all employees; dept in which number of employees are less than 2.
 -- GIVEN TABLE.
 create table employee (
     eid int primary key,
@@ -27,3 +28,4 @@ select dept
 from employee
 group by dept
 having count(employee.eid) < 2;
+-- 3- SOLUTION.
