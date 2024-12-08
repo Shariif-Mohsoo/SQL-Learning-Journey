@@ -23,3 +23,7 @@ select count(employee.eid) as numberOfEMP,
 from employee
 GROUP BY dept;
 -- 2- SOLUTION.
+select dept
+from employee
+group by dept
+having count(employee.eid) < 2;
