@@ -12,5 +12,6 @@ where e2.deptno in (
     );
 
 -- Display the last name and salary of every employee who reports to King.
-
-
+select e1.empno
+from emp e1
+where e1.ename = 'KING';
