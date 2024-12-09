@@ -11,7 +11,12 @@ where e2.deptno in (
         where e1.ename like '%U%'
     );
 
--- Display the last name and salary of every employee who reports to King.
-select e1.empno
-from emp e1
-where e1.ename = 'KING';
+-- Display the  name and salary of every employee who reports to King.
+select ename,
+    sal
+from emp
+where emp.mgr = (
+        select e1.empno
+        from emp e1
+        where e1.ename = 'KING'
+);
