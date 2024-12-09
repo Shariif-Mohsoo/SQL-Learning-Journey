@@ -1,0 +1,2 @@
+-- Write a query that displays the empno and ename of all employees 
+-- who work in a  department with any employee whose last name contains a u.
