@@ -1,5 +1,5 @@
--- Define Nested Query?
--- A query nested with in another query with parenthesis is called nested query.
+-- Define Sub Query?
+-- A query nested with in another query with parenthesis is called sub query.
 -- like 
 select *
 from emp
@@ -33,12 +33,19 @@ from emp e1
 
 
 -- 2. Multiple row subquery
--- query that returns multiple rows and multiple columns
--- query that returns 1 cols but multiple rows.
+--a. query that returns multiple rows and multiple columns
 select emp.*
 from emp
-where emp.sal in (
-        select max(sal)
+where (emp.sal, emp.deptno) in (
+        select max(sal),
+            deptno
         from emp
         group by deptno
+    );
+--b. query that returns 1 cols but multiple rows.
+select *
+from dept
+where deptno not in (
+        select distinct deptno
+        from emp
     );
