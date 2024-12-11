@@ -30,3 +30,15 @@ from emp e1
         select avg(sal) as avgSal
         from emp
     ) avg_sal on e1.sal > avg_sal.avgSal;
+
+
+-- 2. Multiple row subquery
+-- query that returns multiple rows and multiple columns
+-- query that returns 1 cols but multiple rows.
+select emp.*
+from emp
+where emp.sal in (
+        select max(sal)
+        from emp
+        group by deptno
+    );
