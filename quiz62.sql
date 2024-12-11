@@ -19,6 +19,13 @@ where emp.sal > (
 -- example:
 select e1.ename
 from emp e1
+where e1.sal > (
+        select avg(sal)
+        from emp
+    );
+-- another way of writing this query
+select e1.ename
+from emp e1
     join (
         select avg(sal) as avgSal
         from emp
