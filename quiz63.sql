@@ -17,3 +17,47 @@ values (1, 'Apple Store 1', 'iPhone 13 Pro', 1, 1000),
 -- See the data
 select *
 from sales;
+-- SOLUTION:
+select store_name,
+    sum(price) as totalSales,
+    from sales
+group by store_name
+having sum(sales.price) > (
+        select avg(total_sales) as avgSales
+        from (
+                select store_name,
+                    sum(price) as total_sales
+                from sales
+                group by store_name
+            ) x
+    );
+-- another way
+select *
+from (
+        select store_name,
+            sum(price) as total_sales
+        from sales
+        group by store_name
+    ) sales
+    join (
+        select avg(total_sales) as avgSales
+        from (
+                select store_name,
+                    sum(price) as total_sales
+                from sales
+                group by store_name
+            ) X
+    ) avg_sales on sales.total_sales > avg_sales.avgSales;
+-- little bit modified version of upper query
+with allSales as (
+    select store_name,
+        sum(price) as total_sales
+    from sales
+    group by store_name
+)
+select *
+from allSales
+    join (
+        select avg(total_sales) as avgSales
+        from allSales
+    ) avg_sales on allSales.total_sales > avg_sales.avgSales;
