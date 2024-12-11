@@ -14,7 +14,6 @@ where emp.sal > (
 -- 1. Scalar Subquery
 -- 2. Multiple Subquery
 -- 3. Correlated Subquery
-
 -- 1.Scalar Subquery
 -- It returns only  1 row and 1 column.
 -- example:
@@ -32,8 +31,6 @@ from emp e1
         select avg(sal) as avgSal
         from emp
     ) avg_sal on e1.sal > avg_sal.avgSal;
-
-
 -- 2. Multiple row subquery
 --a. query that returns multiple rows and multiple columns
 -- example:
@@ -55,7 +52,6 @@ where deptno not in (
         select distinct deptno
         from emp
     );
-
 -- 3. Correlated Subquery
 -- Query which is related to the outer query.
 -- The processing of the subquery depends on the values return by outer query.
@@ -67,4 +63,12 @@ where e1.sal > (
         select round(avg(e2.sal))
         from emp e2
         where e2.deptno = e1.deptno
+    );
+-- Find the department who don't have any employees.
+select *
+from dept
+where not exists (
+        select 1
+        from emp
+        where emp.deptno = dept.deptno
     );
