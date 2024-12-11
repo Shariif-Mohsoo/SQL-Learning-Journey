@@ -9,7 +9,17 @@ where emp.sal > (
         where emp.ename = 'SMITH'
     );
 -- TYPES:
-There are three types of sub queries.
-1. Scalar Subquery
-2. Multiple Subquery
-3. Correlated Subquery
+-- There are three types of sub queries.
+-- 1. Scalar Subquery
+-- 2. Multiple Subquery
+-- 3. Correlated Subquery
+
+-- 1.Scalar Subquery
+-- It returns only  1 row and 1 column.
+-- example:
+select e1.ename
+from emp e1
+    join (
+        select avg(sal) as avgSal
+        from emp
+    ) avg_sal on e1.sal > avg_sal.avgSal;
