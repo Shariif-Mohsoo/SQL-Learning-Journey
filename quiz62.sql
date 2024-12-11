@@ -14,6 +14,12 @@ where emp.sal > (
 -- 1. Scalar Subquery
 -- 2. Multiple Subquery
 -- 3. Correlated Subquery
+-- CLAUSES
+-- Four different clauses where we can use the sub query.
+-- 1. SELECT
+-- 2. FROM
+-- 3. WHERE
+-- 4. HAVING
 -- 1.Scalar Subquery
 -- It returns only  1 row and 1 column.
 -- example:
