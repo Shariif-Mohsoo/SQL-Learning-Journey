@@ -8,3 +8,8 @@ where emp.sal > (
         from emp
         where emp.ename = 'SMITH'
     );
+-- TYPES:
+There are three types of sub queries.
+1. Scalar Subquery
+2. Multiple Subquery
+3. Correlated Subquery
