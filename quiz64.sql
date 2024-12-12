@@ -11,3 +11,16 @@ select *,
         end
     ) as remarks
 from emp;
+-- FIXME: another way
+select *,
+    (
+        case
+            when emp.sal > avg_sal.salary then 'Higher salary than avg salary'
+            else null
+        end
+    ) as remarks
+from emp
+    cross join (
+        select avg(sal) as salary
+        from emp
+    ) as avg_sal;
