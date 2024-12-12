@@ -28,3 +28,17 @@ where salary in (
         from employee
         group by dept
     );
+
+-- DELETE CLAUSE
+-- Delete all the departments who don't have any employee.
+select * from dept;
+
+delete from dept
+where deptno in (
+        select deptno
+        from dept
+        where deptno not in (
+                select deptno
+                from emp
+            )
+    );
