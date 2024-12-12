@@ -24,3 +24,17 @@ from emp
         select avg(sal) as salary
         from emp
     ) as avg_sal;
+
+
+--TODO: Subquery using Having clause
+-- FIND THE STORES WHO HAVE SOLD MORE UNITS THAN THE AVG UNITS SOLD BY ALL STORES.
+select store_name,
+    sum(quantity)
+from sales_1
+group by store_name
+having sum(quantity) > (
+        select avg(quantity)
+        from sales_1
+    );
+
+
