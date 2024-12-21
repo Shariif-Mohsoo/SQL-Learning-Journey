@@ -32,3 +32,5 @@ where not exists (
         from dept
         where dept.deptno = emp.deptno
     );
+
+
