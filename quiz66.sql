@@ -19,3 +19,12 @@ where emp.mgr in (
         from emp
         where emp.ename = 'BLAKE'
     );
+-- Display the names of the department who manager is ADMAS.
+select dept.dname
+from dept
+    join emp on emp.deptno = dept.deptno
+where emp.mgr in (
+        select empno
+        from emp
+        where emp.ename = 'ADMAS'
+    );
