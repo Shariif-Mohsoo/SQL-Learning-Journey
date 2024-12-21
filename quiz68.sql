@@ -25,3 +25,10 @@ where emp.deptno not in (
     );
 
 -- WITH CO_RELATED SUB QUERY
+select *
+from emp
+where not exists (
+        select *
+        from dept
+        where dept.deptno = emp.deptno
+    );
