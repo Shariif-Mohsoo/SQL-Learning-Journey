@@ -7,3 +7,10 @@ where emp.deptno in (
         from dept
     );
 -- WITH CO_RELATED SUB QUERY
+select *
+from emp
+where exists (
+        select *
+        from dept
+        where dept.deptno = emp.deptno
+    );
