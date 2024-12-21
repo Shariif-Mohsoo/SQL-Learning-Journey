@@ -17,4 +17,11 @@ where exists (
 
 -- FIND ALL EMPLOYEES DETAIL WHO DON'T WORK IN A DEPARTMENT.
 -- WITH SCALAR SUB QUERY
+select *
+from emp
+where emp.deptno not in (
+        select deptno
+        from dept
+    );
+
 -- WITH CO_RELATED SUB QUERY
