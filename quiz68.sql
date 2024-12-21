@@ -14,3 +14,7 @@ where exists (
         from dept
         where dept.deptno = emp.deptno
     );
+
+-- FIND ALL EMPLOYEES DETAIL WHO DON'T WORK IN A DEPARTMENT.
+-- WITH SCALAR SUB QUERY
+-- WITH CO_RELATED SUB QUERY
