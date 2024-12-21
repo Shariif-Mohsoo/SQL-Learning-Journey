@@ -14,3 +14,11 @@ where emp.empno in (
         from emp
         where emp.ename = 'JONES'
     );
+-- Display the details of the manager of employee FORD.
+select *
+from emp
+where emp.empno in (
+        select mgr
+        from emp
+        where emp.ename = 'FORD'
+    );
