@@ -1,0 +1,4 @@
+-- List the employee's department name and location of all the employees who are CLERK, 
+-- reporting to the BLAKE and salary is lesser than MARTIN salary.
+-- Display all the department names for WARD manager's manager.
+-- Display the department name who earn minimum salary and have reporting manager.
