@@ -1,0 +1,3 @@
+-- Display the employees name who earn maximum salary and have no reporting manager.
+-- Display the employee details who are reporting to BLAKE and have commission without using null or not null.
+-- List the department name and loc of all the SALESMAN Manager's-Manager.
