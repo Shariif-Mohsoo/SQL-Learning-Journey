@@ -17,3 +17,12 @@ where emp.empno = (
         select max(empno)
         from emp
     );
+-- DISPLAY ALL THE EMPLOYEE WHOSE SALARY IS GREATER 
+-- THAN AVERAGE SALARY OF DEPARTMENT 30.
+select *
+from emp
+where emp.sal > (
+        select round(avg(sal), 2)
+        from emp
+        where emp.deptno = 30
+    );
