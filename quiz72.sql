@@ -24,3 +24,11 @@ where emp.sal > any (
         from emp
         where emp.job = 'ANALYST'
     );
+-- DISPLAY ALL THE EMPLOYEES WHO ARE EARN LESS THAN ANY OF THE SALESMAN.
+select *
+from emp
+where emp.sal < any (
+        select sal
+        from emp
+        where emp.job = 'SALESMAN'
+    );
