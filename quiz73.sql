@@ -10,4 +10,10 @@ where emp.hiredata > (
         select sal
         from emp
         where emp.ename = 'BLAKE'
+    ) -- DISPLAY LAST EMPLOYEE RECORD ACCORDING TO EMPNO.
+select *
+from emp
+where emp.empno = (
+        select max(empno)
+        from emp
     );
