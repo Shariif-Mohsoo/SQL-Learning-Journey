@@ -16,3 +16,11 @@ where emp.deptno = (
         select max(hiredata)
         from emp
     );
+-- DISPLAY ENAME, SAL OF EMPLOYEES WHO ARE EARNING MORE THAN ANY OF THE ANALYST.
+select ename
+from emp
+where emp.sal > any (
+        select sal
+        from emp
+        where emp.job = 'ANALYST'
+    );
