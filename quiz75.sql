@@ -16,3 +16,13 @@ where dept.deptno IN (
         group by deptno
         having count(empno) >= 3
     );
+-- LIST DEPARTMENT NAME HAVING AT LEAST 3 SALESMAN.
+select *
+from dept
+where deptno in (
+        select deptno
+        from emp
+        where emp.job = 'SALESMAN'
+        group by deptno
+        having count(*) >= 3
+    );
