@@ -7,3 +7,12 @@ where dept.deptno in (
         group by deptno
         having count(empno) > 4
     );
+-- LIST THE DEPARTMENT NAMES THAT ARE HAVING AT LEAST 3 EMPLOYES IN IT.
+select *
+from dept
+where dept.deptno IN (
+        select deptno
+        from emp
+        group by deptno
+        having count(empno) >= 3
+    );
