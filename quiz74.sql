@@ -16,3 +16,11 @@ having min(sal) < (
         select round(avg(sal))
         from emp
     );
+-- DISPLAY ALL THE EMPLOYEES WHOSE SALARY IS GREATER THAN AVG SAL OF DEPARTMENT 20.
+select *
+from emp
+where emp.sal > (
+        select round(avg(sal))
+        from emp
+        where deptno = 20
+    );
