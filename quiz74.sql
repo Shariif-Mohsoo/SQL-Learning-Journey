@@ -7,3 +7,12 @@ where emp.sal > (
         where emp.deptno = 30
     )
 order by sal;
+-- DISPLAY DEPARTMENT WISE MINIMUM SALARY WHICH IS LESS THAN AVERAGE SALARY OF EMPLOYEES.
+select deptno,
+    min(sal)
+from emp
+group by deptno
+having min(sal) < (
+        select round(avg(sal))
+        from emp
+    );
