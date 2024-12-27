@@ -6,3 +6,6 @@ where emp.hiredate = (
         select min(emp.hiredate)
         from emp
     );
+
+-- select the employee who mgr is BLAKE;
+select empno from emp where emp.ename = 'BLAKE';
