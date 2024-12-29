@@ -8,8 +8,11 @@ where emp.hiredate = (
     );
 
 -- select the employee who mgr is BLAKE;
-select * from emp
-where emp.mgr
-in
-(select empno from emp where emp.ename = 'BLAKE');
+select *
+from emp
+where emp.mgr in (
+        select empno
+        from emp
+        where emp.ename = 'BLAKE'
+    );
 
