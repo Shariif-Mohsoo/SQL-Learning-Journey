@@ -16,3 +16,5 @@ where emp.mgr in (
         where emp.ename = 'BLAKE'
     );
 
+-- select the employee with maximum salary.
+
