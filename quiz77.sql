@@ -17,4 +17,5 @@ where emp.mgr in (
     );
 
 -- select the employee with maximum salary.
+select max(sal) from emp;
 
