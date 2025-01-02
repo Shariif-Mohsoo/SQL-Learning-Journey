@@ -17,9 +17,11 @@ where emp.mgr in (
     );
 
 -- select the employee with maximum salary.
-select * from emp
-where emp.sal
-=
-(select max(sal) from emp);
+select *
+from emp
+where emp.sal = (
+        select max(sal)
+        from emp
+    );
 
 
