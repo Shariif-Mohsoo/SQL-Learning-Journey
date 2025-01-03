@@ -33,5 +33,13 @@ where emp.sal <> (
     )
 order by sal desc
 limit 1;
+select max(sal)
+from
+(select *
+from emp
+where emp.sal <> (
+        select max(sal)
+        from emp
+    )) secondMax;
 
 
