@@ -33,6 +33,7 @@ where emp.sal <> (
     )
 order by sal desc
 limit 1;
+-- 2nd way
 select max(sal)
 from
 (select *
