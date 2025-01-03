@@ -24,4 +24,7 @@ where emp.sal = (
         from emp
     );
 
+-- select the emp with second maximum salary
+select * from emp order by sal limit 1;
+
 
