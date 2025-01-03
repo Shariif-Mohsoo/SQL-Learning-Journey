@@ -25,6 +25,6 @@ where emp.sal = (
     );
 
 -- select the emp with second maximum salary
-select * from emp order by sal limit 1;
+select max(sal) from emp;
 
 
