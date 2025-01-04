@@ -8,3 +8,5 @@
 --      b) Update able(Changes in the view will also be reflected in the base table)
 -- 4) Materialized View(Updated version of view that will acquire the space(it's just the snapshot or copy of base table.).)
 -- FIXME: Limitations on view
+-- We can't apply any kind of DDL command on view
+-- We can apply DML  commands on view (if we created the update able view).
