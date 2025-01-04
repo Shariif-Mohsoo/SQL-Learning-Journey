@@ -6,4 +6,4 @@
 -- 3) View can be created in two ways:
 --      a) Read-only(They should be only read able not modify able.)
 --      b) Update able(Changes in the view will also be reflected in the base table)
--- 4) Materialized View
+-- 4) Materialized View(Updated version of view that will acquire the space(it's just the snapshot or copy of base table.).)
