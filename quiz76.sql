@@ -11,7 +11,7 @@
 -- We can't apply any kind of DDL command on view
 -- We can apply DML  commands on view (if we created the update able view).
 -- TODO: Advantages of view
--- a) To restrict data access (Security Point Of View)
--- b) To make complex queries easy
--- c)
--- d)
+-- a) To restrict data access (Security Point Of View).
+-- b) To make complex queries easy.
+-- c) To provide data independence.
+-- d) To present different views on the same data(Like privilege levels in the university on set of data).
