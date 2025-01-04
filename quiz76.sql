@@ -1,0 +1,7 @@
+-- TODO: What is View In Database?
+-- FIXME: Answer:
+-- view is noting just 
+-- 1) Virtual Table((WHY?) (Reason:It's look like a table but not actual table. Not acquire any space))
+-- 2) View is the result set of a stored query.
+-- 3)
+-- 4)
