@@ -15,3 +15,8 @@
 -- b) To make complex queries easy.
 -- c) To provide data independence.
 -- d) To present different views on the same data(Like privilege levels in the university on set of data).
+
+-- EXAMPLE
+-- create the view for the emp name,registration number and salary.
+create view empView1 as
+select empno, ename,sal from emp;
