@@ -19,4 +19,7 @@
 -- EXAMPLE
 -- create the view for the emp name,registration number and salary.
 create view empView1 as
-select empno, ename,sal from emp;
+select empno,
+    ename,
+    sal
+from emp;
