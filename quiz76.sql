@@ -23,3 +23,5 @@ select empno,
     ename,
     sal
 from emp;
+
+select * from empView1;
