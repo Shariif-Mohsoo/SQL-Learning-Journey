@@ -27,3 +27,6 @@ from emp;
 select * from empView1;
 
 -- Drop the view for the emp name,registration number and salary.
+drop view empView1;
+
+select * from empView1;
