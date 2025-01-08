@@ -16,3 +16,9 @@
 -- 3 savepoint
 -- we use savepoint command to initialize our records to the savepoint where we recognized it.
 -- syntax savepoint savepointName;
+-- FIXME: Alter=>
+-- If we make two save points (k1,k2) and then after some while 
+-- we rollback to k1 then k2 will automatically discarded
+--  and it will not be available any more.
+-- syntax to rollback to savepoint:
+-- rollback to savepointName;
