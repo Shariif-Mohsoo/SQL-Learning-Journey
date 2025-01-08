@@ -8,5 +8,11 @@
 -- 3 savepoint
 -- let's little bit explore them.
 -- 1 commit:
--- we use this commit to save the changes permanently in the server(database);
+-- we use commit command to save the changes permanently in the server(database);
 -- syntax: commit;
+-- 2 rollback
+-- we use rollback to return to the previous change point or commit point;
+-- syntax: rollback;
+-- 3 savepoint
+-- we use savepoint command to initialize our records to the savepoint where we recognized it.
+-- syntax savepoint savepointName;
