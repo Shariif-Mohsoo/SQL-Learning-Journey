@@ -1,4 +1,12 @@
 -- TRANSITION CONTROL LANGUAGE (TCL)
-It is used to use to control the transitions in the database;
-transitions means those activities
-or operations we perform in DML.
+-- It is used to use to control the transitions in the database;
+-- transitions means those activities
+-- or operations we perform in DML.
+-- There are three commands in TCL
+-- 1 commit
+-- 2 rollback
+-- 3 savepoint
+-- let's little bit explore them.
+-- 1 commit:
+-- we use this commit to save the changes permanently in the server(database);
+-- syntax: commit;
