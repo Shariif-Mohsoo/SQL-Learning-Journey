@@ -1,9 +1,15 @@
 -- implicitly  IN.
-create procedure updateSal(bonus int IN,empName varchar(30) IN)
-language plpgsql
-as $$
-Begin
-    update emp set sal = sal + bonus
-    where emp.ename = empName
-End;
+CREATE OR REPLACE 
+PROCEDURE updateSa
+(bonus int, empName varchar(30))
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    UPDATE emp
+    SET sal = sal + bonus
+    WHERE ename = empName;
+END;
 $$;
+SELECT * FROM emp;
+call updateSal(500,'BLAKE');
+SELECT * FROM emp;
