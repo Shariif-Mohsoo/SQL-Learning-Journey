@@ -1,36 +1,82 @@
-create table students (
-    id int primary key,
-    name varchar(20),
-    class int default null,
-    marks float default 0.00
-);
--- inserting some sort of data in the students table.
-insert into students
-VALUES(1, 'M.Mohsin', 2, 22.22);
-insert into students
-VALUES(2, 'M.Danish', 2, 22.22);
-insert into students
-VALUES(3, 'M.Muneeb', 2, 22.22);
--- selecting everything from the table
+-- VIEW IN SQL
+create view muneeba As
+select empno,
+    ename,
+    hiredate,
+    job,
+    sal,
+    deptno
+from emp;
+-- updaing some sort of data from view muneeba
+update muneeba
+set ename = 'MUNEEB'
+where muneeba.ename = 'Ali';
+--   LAB TASKS
+-- Qno1. Create simple view with name emp12 where employee having dept no 20?
+create view emp12 AS
 select *
-from students;
--- updating some sore of data
-update students
-set marks = 23.22
-where id = 1;
+from emp
+where emp.deptno = 20;
+-- Qno2. Describe view emp12?
+desc emp12;
+-- Qno3. Create view where employee salary is less than 4000?
+create view emp13 AS
 select *
-from students
-where id = 1;
--- altering the table now 
-alter table students drop column age;
--- adding new column
-alter table students
-add column dob float default null;
+from emp
+where emp.sal < 4000;
+-- Qno4. Create view with aliases and select employee name and there annual salary?
+create view emp14 AS
+select ename,
+    sal * 12 as annualSal
+from emp;
+-- Qno5 Create complex view with ename  , job and average salary group by deptno?
+create view emp16 AS
+select ename,
+    job,
+    avg(sal) as avgSal
+from emp
+GROUP BY deptno,
+    ename,
+    job;
+-- Qno6 Create view with name empnew with minimum and maximum salary?
+create view empnew AS
+select min(sal) as minSal,
+    max(sal) as maxSal
+from emp;
+-- Note/Alert
+-- ORA-01732: data manipulation operation not legal on this view
+-- Qno7 Create view with name ann_emp with employee annual salary?
+create view ann_emp AS
+select sal * 12 as annualSal
+from emp;
+-- Qno8 Create view with name emp_date having employe join before 1981.
+create view emp_date AS
 select *
-from students;
-delete from students
-where id = 2;
-alter table students drop column dob;
--- selecting from students;
+from emp
+where extract(
+        year
+        from emp.hiredate
+    ) < 1981;
+--////////////////////////////////////////////////////// READ ONLY VIEW 
+create view emp_date2 AS
 select *
-from students;
+from emp
+where extract(
+        year
+        from emp.hiredate
+    ) < 1981 with read only;
+-- Note/Alert:
+-- cannot delete from view without exactly one key-preserved table
+-- //////////////////////////////////////REPLACING VIEW
+create or replace view emp12 As
+select *
+from emp
+where emp.deptno = 20 with check option constraint check_constraint;
+-- The WITH CHECK OPTION clause is used in SQL to enforce data integrity
+-- when performing updates
+-- or inserts on a view.
+-- When applied to a view,
+-- it ensures that any data inserted
+-- or updated through the view must satisfy the conditions specified in the view ’ s
+-- SELECT query.If the data does not meet the view ’ s criteria,
+--     the operation will be rejected.
