@@ -1,0 +1,24 @@
+-- TRANSITION CONTROL LANGUAGE (TCL)
+-- It is used to use to control the transitions in the database;
+-- transitions means those activities
+-- or operations we perform in DML.
+-- There are three commands in TCL
+-- 1 commit
+-- 2 rollback
+-- 3 savepoint
+-- let's little bit explore them.
+-- 1 commit:
+-- we use commit command to save the changes permanently in the server(database);
+-- syntax: commit;
+-- 2 rollback
+-- we use rollback to return to the previous change point or commit point;
+-- syntax: rollback;
+-- 3 savepoint
+-- we use savepoint command to initialize our records to the savepoint where we recognized it.
+-- syntax savepoint savepointName;
+-- FIXME: Alter=>
+-- If we make two save points (k1,k2) and then after some while 
+-- we rollback to k1 then k2 will automatically discarded
+--  and it will not be available any more.
+-- syntax to rollback to savepoint:
+-- rollback to savepointName;

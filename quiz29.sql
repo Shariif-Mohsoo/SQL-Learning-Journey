@@ -1,0 +1,12 @@
+select * from student;
+insert into student values(22,'MOHSOO',22,null);
+delete from student where student.rollno = 22 and student.deptno = 22;
+select * from student where student.rollno%2 = 0 or student.rollno = 22;
+select * from student where student.rollno / 2 = 11;
+select * from student where student.rollno between 20 and 23;
+select * from student where student.rollno in (12,22,23);
+select * from student where student.rollno not in (12,23,32);
+select * from student limit 1;
+select count(*) as length from student;
+select * from student group by rollno;
+select deptno,count(rollno) from student group by deptno;
