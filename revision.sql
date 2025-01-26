@@ -1,1 +1,1 @@
--- DQL
+-- DQL(Data Query Language)
